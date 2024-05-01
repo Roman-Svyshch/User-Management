@@ -1,4 +1,10 @@
+server:
+  port: 8080
 spring:
+  application:
+    name: "UserManagementAPI"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:userdb
     driverClassName: org.h2.Driver
@@ -9,8 +15,7 @@ spring:
       enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-  application:
-    name: UserManagementAPI
+
 
 management:
   endpoints:
@@ -23,3 +28,9 @@ springdoc:
     path: /swagger-ui.html
     resources:
       configUrl: /v3/api-docs/swagger-config
+
+info:
+  app:
+    name: "users-management"
+    description: "Users-Management-System"
+    version: "1.0.0"
